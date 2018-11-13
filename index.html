@@ -265,24 +265,53 @@ rgb(0,76,198) #004cc6
           </div>
         </div>
       </section>
-
-      <section class='section section-contact' id='contact'>
+			<section class='section section-contact' id='contact'>
         <div class='wrap'>
           <div class='inner'>
             <div class='container'>
               <h1>contact</h1>
-              <form method='post' action='https://formspree.io/raghuarjun2005@gmail.com' class='contact-form' data-finish-message='You’ve sent us this message' novalidate>
+              <form id="contact-form" action="https://formspree.io/info@ploud.io" method="post" class='contact-form' data-finish-message='You’ve sent us this message' novalidate>
                 <p class='field'>
-                  <input class='half' name='name-name' placeholder='name' required type='text'>
+                  <input class='half' name='name' placeholder='name' required type='text'>
                 </p>
                 <p class='field email'>
-                  <input class='half' name='name-email' placeholder='email' required type='email'>
+                  <input class='half' name='email' placeholder='email' required type='email'>
                 </p>
                 <p class='field message'>
-                  <textarea class='full' name='name-message' placeholder='message' required spellcheck='false'></textarea>
+                  <textarea class='full' name='message' placeholder='message' required spellcheck='false'></textarea>
+                </p>
+                <div class='end'>
+                  <p class='action'>
+                    <button class='button submit' type='submit' value="Send">Send</button>
+                  </p>
+                  <div class='contact-details'>
+                    <p>give us a call <strong><a class="link-phone" href="tel:+919739499716">+91 97 39 499 716</a></strong></p>
+                    <p class='direct'>direct email <strong><a class="email" href="index.html#">hello@ploud.io</a></strong></p>
+                    <p class='new'>or <strong><a href="index.html#">send new message</a></strong></p>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--<section class='section section-contact' id='contact'>
+        <div class='wrap'>
+          <div class='inner'>
+            <div class='container'>
+              <h1>contact</h1>
+              <form action='index.html' class='contact-form' data-finish-message='You’ve sent us this message' method='post' novalidate>
+                <p class='field'>
+                  <input class='half' name='name' placeholder='name' required type='text'>
+                </p>
+                <p class='field email'>
+                  <input class='half' name='email' placeholder='email' required type='email'>
+                </p>
+                <p class='field message'>
+                  <textarea class='full' name='message' placeholder='message' required spellcheck='false'></textarea>
                 </p>
                 <p class='field phone extra'>
-                  <input class='half' name='name-phone' placeholder='phone' type='text'>
+                  <input class='half' name='phone' placeholder='phone' type='text'>
                 </p>
                 <p class='field info extra'>
                   <input class='half' name='info' placeholder='info' type='text'>
@@ -301,7 +330,7 @@ rgb(0,76,198) #004cc6
             </div>
           </div>
         </div>
-      </section>
+      </section>-->
 
       <section class='section section-hq' id='map'>
         <h1>Clients around the world</h1>
@@ -393,5 +422,6 @@ rgb(0,76,198) #004cc6
     <script src='js/libs/jquery.instashow.js'></script>
     <script src='js/libs/plyr.js'></script>
     <script src='js/app.js'></script>
+		<script src="js/contact.js"></script>
   </body>
 </html>
