@@ -18,6 +18,7 @@
     <meta content='#' name='google-site-verification'>
     <script src='js/modernizr.min.js'></script>
   </head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <body>
     <div class='section-intro'>
 
@@ -270,7 +271,7 @@ rgb(0,76,198) #004cc6
           <div class='inner'>
             <div class='container'>
               <h1>contact</h1>
-              <form id="contact-form" action="https://formspree.io/info@ploud.io" method="post" class='contact-form' data-finish-message='You’ve sent us this message' novalidate>
+              <form action="https://formcarry.com/s/_6l0IfQbxJx" method="post" class='ajaxForm contact-form' accept-charset="UTF-8" data-finish-message='You’ve sent us this message' novalidate>
                 <p class='field'>
                   <input class='half' name='name' placeholder='name' required type='text'>
                 </p>
@@ -279,6 +280,7 @@ rgb(0,76,198) #004cc6
                 </p>
                 <p class='field message'>
                   <textarea class='full' name='message' placeholder='message' required spellcheck='false'></textarea>
+									<input type="hidden" name="_gotcha">
                 </p>
                 <div class='end'>
                   <p class='action'>
@@ -295,43 +297,6 @@ rgb(0,76,198) #004cc6
           </div>
         </div>
       </section>
-      <!--<section class='section section-contact' id='contact'>
-        <div class='wrap'>
-          <div class='inner'>
-            <div class='container'>
-              <h1>contact</h1>
-              <form action='index.html' class='contact-form' data-finish-message='You’ve sent us this message' method='post' novalidate>
-                <p class='field'>
-                  <input class='half' name='name' placeholder='name' required type='text'>
-                </p>
-                <p class='field email'>
-                  <input class='half' name='email' placeholder='email' required type='email'>
-                </p>
-                <p class='field message'>
-                  <textarea class='full' name='message' placeholder='message' required spellcheck='false'></textarea>
-                </p>
-                <p class='field phone extra'>
-                  <input class='half' name='phone' placeholder='phone' type='text'>
-                </p>
-                <p class='field info extra'>
-                  <input class='half' name='info' placeholder='info' type='text'>
-                </p>
-                <div class='end'>
-                  <p class='action'>
-                    <button class='button' type='submit'>Send</button>
-                  </p>
-                  <div class='contact-details'>
-                    <p>give us a call <strong><a class="link-phone" href="tel:+919739499716">+91 97 39 499 716</a></strong></p>
-                    <p class='direct'>direct email <strong><a class="email" href="index.html#">hello@ploud.io</a></strong></p>
-                    <p class='new'>or <strong><a href="index.html#">send new message</a></strong></p>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>-->
-
       <section class='section section-hq' id='map'>
         <h1>Clients around the world</h1>
         <div class='world-map'>
@@ -422,6 +387,44 @@ rgb(0,76,198) #004cc6
     <script src='js/libs/jquery.instashow.js'></script>
     <script src='js/libs/plyr.js'></script>
     <script src='js/app.js'></script>
-		<script src="js/contact.js"></script>
+<script>
+
+$(function(){
+
+    $(".ajaxForm").submit(function(e){
+
+        e.preventDefault();
+
+        var href = $(this).attr("action");
+
+        $.ajax({
+
+            type: "POST",
+
+            dataType: "json",
+
+            url: href,
+
+            data: $(this).serialize(),
+
+            success: function(response){
+
+                if(response.status == "success"){
+
+                }else{
+
+                    alert("An error occured: " + response.message);
+
+                }
+
+            }
+
+        });
+
+    });
+
+});
+
+</script>
   </body>
 </html>

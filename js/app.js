@@ -1008,9 +1008,9 @@ var Forms = {
 			}, 500);
 		},
 
-/*		send: function() {
-			$.post('contact-form/send.php', Forms.contactForm.el.serialize());
-		},*/
+		send: function() {
+			$.post('#', Forms.contactForm.el.serialize());
+		},
 
 		init: function() {
 			var self = this,
